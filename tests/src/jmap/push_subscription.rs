@@ -308,7 +308,7 @@ impl utils::listener::SessionManager for SessionManager {
                             }
                             let is_encrypted = req
                                 .headers()
-                                .get(CONTENT_ENCODING)
+                                .get(CONTENT_ENCODING.as_str())
                                 .map_or(false, |encoding| {
                                     encoding.to_str().unwrap() == "aes128gcm"
                                 });

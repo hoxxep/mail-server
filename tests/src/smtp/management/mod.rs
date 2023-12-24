@@ -49,7 +49,7 @@ pub async fn send_manage_request_raw(query: &str) -> Result<String, String> {
         .build()
         .unwrap()
         .get(format!("https://127.0.0.1:9980{query}"))
-        .header(AUTHORIZATION, "Basic YWRtaW46c2VjcmV0")
+        .header(AUTHORIZATION.as_str(), "Basic YWRtaW46c2VjcmV0")
         .send()
         .await
         .map_err(|err| err.to_string())?

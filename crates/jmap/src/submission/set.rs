@@ -378,7 +378,7 @@ impl JMAP {
                                             return Ok(Err(SetError::invalid_properties()
                                                 .with_property(Property::Envelope)
                                                 .with_description(format!(
-                                                    "Failed to parse mailFrom parameters: {err}."
+                                                    "Failed to parse mailFrom parameters: {err:?}."
                                                 ))));
                                         }
                                     }
@@ -411,7 +411,7 @@ impl JMAP {
                                                     return Ok(Err(SetError::invalid_properties()
                                                         .with_property(Property::Envelope)
                                                         .with_description(format!(
-                                                        "Failed to parse rcptTo parameters: {err}."
+                                                        "Failed to parse rcptTo parameters: {err:?}."
                                                     ))));
                                                 }
                                             }

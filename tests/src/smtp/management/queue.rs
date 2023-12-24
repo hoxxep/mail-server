@@ -28,7 +28,7 @@ use std::{
 
 use ahash::{AHashMap, HashMap, HashSet};
 use directory::config::ConfigDirectory;
-use hyper::{header::AUTHORIZATION, StatusCode};
+use hyper::header::AUTHORIZATION;
 use mail_auth::MX;
 use mail_parser::DateTime;
 use utils::config::{Config, ServerProtocol};
@@ -454,12 +454,12 @@ async fn manage_queue() {
             .build()
             .unwrap()
             .get("https://127.0.0.1:9980/list")
-            .header(AUTHORIZATION, "Basic YWRtaW46aGVsbG93b3JsZA==")
+            .header(AUTHORIZATION.as_str(), "Basic YWRtaW46aGVsbG93b3JsZA==")
             .send()
             .await
             .unwrap()
             .status(),
-        StatusCode::UNAUTHORIZED
+        reqwest::StatusCode::UNAUTHORIZED
     );
 }
 
