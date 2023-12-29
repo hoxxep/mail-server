@@ -38,6 +38,7 @@ pub mod mta_sts;
 pub mod smtp;
 pub mod throttle;
 pub mod tls;
+pub mod smuggling;
 
 const SERVER: &str = "
 [server]

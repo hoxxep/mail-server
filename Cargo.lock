@@ -2775,9 +2775,9 @@ dependencies = [
 
 [[package]]
 name = "jmap-client"
-version = "0.3.1"
+version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bafb96896c352dd68f3a32f0a2e0450a589366a76c0120bd4ae585f68ad381f5"
+checksum = "12c697483ad894a8184d0fd61848e057f86b16642049993b3e6a80c959dbc90a"
 dependencies = [
  "ahash 0.8.6",
  "async-stream",
@@ -2787,7 +2787,8 @@ dependencies = [
  "maybe-async",
  "parking_lot",
  "reqwest",
- "rustls 0.21.10",
+ "rustls 0.22.1",
+ "rustls-pki-types",
  "serde",
  "serde_json",
  "tokio",

