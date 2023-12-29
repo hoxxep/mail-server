@@ -20,13 +20,13 @@ imap = { path = "../crates/imap", features = ["test_mode"] }
 imap_proto = { path = "../crates/imap-proto" }
 smtp = { path = "../crates/smtp", features = ["test_mode", "local_delivery"] }
 managesieve = { path = "../crates/managesieve", features = ["test_mode"] }
-smtp-proto = { version = "0.1" }
-mail-send = { version = "=0.4.2", default-features = false, features = ["cram-md5", "skip-ehlo"] }
-mail-auth = { version = "0.3", git = "https://github.com/stalwartlabs/mail-auth", features = ["test"] }
-sieve-rs = { version = "0.3", git = "https://github.com/stalwartlabs/sieve" }
+smtp-proto = { workspae = true }
+mail-send = { workspace = true, default-features = false, features = ["cram-md5", "skip-ehlo"] }
+mail-auth = { workspace = true, features = ["test"] }
+sieve-rs = { workspace = true }
 utils = { path = "../crates/utils", features = ["test_mode"] }
-jmap-client = { version = "0.3", git = "https://github.com/stalwartlabs/jmap-client", features = ["websockets", "debug", "async"] }
-mail-parser = { version = "0.9", git = "https://github.com/stalwartlabs/mail-parser", features = ["full_encoding", "serde_support", "ludicrous_mode"] }
+jmap-client = { workspace = true, features = ["websockets", "debug", "async"] }
+mail-parser = { workspace = true, features = ["full_encoding", "serde_support", "ludicrous_mode"] }
 tokio = { version = "1.23", features = ["full"] }
 tokio-rustls = { version = "0.24.0"}
 rustls = "0.21.0"

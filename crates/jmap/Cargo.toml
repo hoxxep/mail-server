@@ -12,10 +12,10 @@ smtp = { path =  "../smtp" }
 utils = { path =  "../utils" }
 directory = { path =  "../directory" }
 smtp-proto = { version = "0.1" }
-mail-parser = { version = "0.9", git = "https://github.com/stalwartlabs/mail-parser", features = ["full_encoding", "serde_support", "ludicrous_mode"] }
-mail-builder = { version = "0.3", git = "https://github.com/stalwartlabs/mail-builder", features = ["ludicrous_mode"] }
-mail-send = { version = "=0.4.2", default-features = false, features = ["cram-md5", "skip-ehlo"] }
-sieve-rs = { version = "0.3", git = "https://github.com/stalwartlabs/sieve" }
+mail-parser = { workspace = true, features = ["full_encoding", "serde_support", "ludicrous_mode"] }
+mail-builder = { workspace = true, features = ["ludicrous_mode"] }
+mail-send = { workspace = true, default-features = false, features = ["cram-md5", "skip-ehlo"] }
+sieve-rs = { workspace = true }
 serde = { version = "1.0", features = ["derive"]}
 serde_json = "1.0"
 hyper = { version = "1.0", features = ["server", "http1", "http2"] }

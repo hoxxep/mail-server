@@ -15,12 +15,12 @@ resolver = "2"
 utils = { path =  "../utils" }
 nlp = { path =  "../nlp" }
 directory = { path =  "../directory" }
-mail-auth = { version = "0.3", git = "https://github.com/stalwartlabs/mail-auth" }
-mail-send = { version = "=0.4.2", default-features = false, features = ["cram-md5", "skip-ehlo"] }
-mail-parser = { version = "0.9", git = "https://github.com/stalwartlabs/mail-parser", features = ["full_encoding", "ludicrous_mode"] }
-mail-builder = { version = "0.3", git = "https://github.com/stalwartlabs/mail-builder", features = ["ludicrous_mode"] }
-smtp-proto = { version = "0.1" }
-sieve-rs = { version = "0.3", git = "https://github.com/stalwartlabs/sieve" }
+mail-auth = { workspace = true, git = "https://github.com/stalwartlabs/mail-auth" }
+mail-send = { workspace = true, default-features = false, features = ["cram-md5", "skip-ehlo"] }
+mail-parser = { workspace = true, features = ["full_encoding", "ludicrous_mode"] }
+mail-builder = { workspace = true, features = ["ludicrous_mode"] }
+smtp-proto = { workspace = true }
+sieve-rs = { workspace = true }
 ahash = { version = "0.8" }
 rustls = "0.21.0"
 rustls-pemfile = "1.0"
@@ -57,7 +57,7 @@ unicode-security = "0.1.0"
 infer = "0.15.0"
 
 [features]
-test_mode = []
+test_mode = ["mail-auth/test"]
 local_delivery = []
 
 #[[bench]]
