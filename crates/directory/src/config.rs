@@ -413,14 +413,18 @@ pub(crate) fn build_pool<M: ManageConnection>(
         )
         .max_size(config.property_or_static((prefix, "pool.max-connections"), "10")?)
         .max_lifetime(
-            config
-                .property_or_static::<Duration>((prefix, "pool.max-lifetime"), "30m")?
-                .into(),
+            Some(
+                config
+                    .property_or_static::<Duration>((prefix, "pool.max-lifetime"), "30m")?
+                    .into()
+            ),
         )
         .idle_timeout(
-            config
-                .property_or_static::<Duration>((prefix, "pool.idle-timeout"), "10m")?
-                .into(),
+            Some(
+                config
+                    .property_or_static::<Duration>((prefix, "pool.idle-timeout"), "10m")?
+                    .into()
+            ),
         )
         .connection_timeout(config.property_or_static((prefix, "pool.connect-timeout"), "30s")?)
         .test_on_check_out(true)
